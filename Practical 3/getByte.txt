@@ -1,0 +1,27 @@
+public int getByte(int num)
+{
+	int temp = num/128;
+	int result;
+	if(num == -128){
+		result = -128;
+		return result;
+	}
+	if(num >= 0){
+		if(temp % 2 == 0){
+			result = num % 128;
+		}
+		else{
+			result = num % 128 - 128;
+		}
+	}
+	else{
+		if(temp % 2 == 0){
+			result = num % (-128);
+		}
+		else{
+			result = num % (-128) + 128;
+		}
+	}
+	
+return result;
+}

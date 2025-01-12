@@ -1,0 +1,75 @@
+int getByte(int num)
+{
+	int temp = num/128;
+	int result;
+	if(num == -128){
+		result = -128;
+		return result;
+	}
+	if(num >= 0){
+		if(temp % 2 == 0){
+			result = num % 128;
+		}
+		else{
+			result = num % 128 - 128;
+		}
+	}
+	else{
+		if(temp % 2 == 0){
+			result = num % (-128);
+		}
+		else{
+			result = num % (-128) + 128;
+		}
+	}
+	
+return result;
+}
+
+int getShort(int num)
+{
+	int temp = num/32768;
+	int result;
+	if(num == -32768){
+		result = -32768;
+		return result;
+	}
+	if(num >= 0){
+		if(temp % 2 == 0){
+			result = num % 32768;
+		}
+		else{
+			result = num % 32768 - 32768;
+		}
+	}
+	else{
+		if(temp % 2 == 0){
+			result = num % (-32768);
+		}
+		else{
+			result = num % (-32768) + 32768;
+		}
+	}
+	
+return result;
+}
+
+public int getNumber(int num, String type)
+{
+	int result = 0;
+	char[] input = type.toCharArray();
+	for(int i=0; i<input.length; i++){
+		if(input[i] >= 'A' && input[i] <= 'Z'){
+			input[i] += 32;
+		}
+	}
+	type = String.valueOf(input);
+	if(type.equals("byte")){
+		result = getByte(num);
+	}
+	else if(type.equals("short")){
+		result = getShort(num);
+	}
+
+return result;
+}
