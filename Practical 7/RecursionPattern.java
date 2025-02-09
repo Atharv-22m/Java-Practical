@@ -1,7 +1,7 @@
 public class RecursionPattern {
     public static void main(String[] args) {
         int size = Integer.parseInt(args[0]);
-        RecursiveStarPattern pattern = new RecursiveStarPattern();
+        RecursionPattern pattern = new RecursionPattern();
         System.out.println("Pattern 1:");
         pattern.printPattern1(1, size);
 
